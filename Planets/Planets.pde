@@ -7,7 +7,10 @@ Planet Gliese6667ce;
 Planet Kepler62e;
 Planet Keplar62f;
 Planet Gliese581d;
-
+ 
+float d;
+ 
+ 
 void setup()
 {
   size(600,900);
@@ -52,12 +55,26 @@ class Planet
     ypos = tempYpos;
     size = tempSize;
   }
+void clicked() 
+{
+  d = dist(mouseX, mouseY, xpos, ypos);
+  if(d < size)
+  {
+    print("Clicked on bubble");
+  }
+}
 
-  void display()
+void mousePressed()
+{
+  Earth.clicked();
+}
+
+void display()
   {
     stroke(0);
     fill(c);
     ellipse(xpos, ypos, size, size);
+    print("Clicked on bubble");
   }
 
 }
