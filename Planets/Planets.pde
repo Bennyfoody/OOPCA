@@ -8,7 +8,8 @@ Planet Neptune;
 Planet Sun;
 Planet Mercury;
 Planet Mars;
-Bg[] b = new Bg[500];
+Bg[] b = new Bg[250];
+int stage = 1;
 
   PImage earth;
   PImage jupiter;
@@ -23,60 +24,160 @@ Bg[] b = new Bg[500];
 void setup()
 {
   size(1600,900);
-  neptune = loadImage("Images/Neptune.jpg");
-  uranus = loadImage("Images/Uranus.jpg");
-  jupiter = loadImage("Images/Jupiter.jpg");
-  saturn = loadImage("Images/Saturn.jpg");
-  mars = loadImage("Images/Mars.jpg");
-  earth = loadImage("Images/Earth.jpg");
-  venus = loadImage("Images/Venus.jpg");
-  mercury = loadImage("Images/Mercury.jpg");
-  sun = loadImage("Images/Sun.jpeg");
-  
-  Neptune = new Planet(color(66, 75, 244), 800, 840 ,80, "Neptune");
-  Uranus = new Planet(color(66, 170, 244), 750, 250 ,70 , "Uranus");
-  Saturn = new Planet(color(244, 158, 66), 420, 450,50, "Saturn");
-  Jupiter = new Planet(color(244, 146, 66), 1200, 310 ,120 ,"Jupiter");
-  Mars = new Planet(color(98, 244, 66), 1150, 500 ,90 ,"Mars");
-  Earth = new Planet(color(98, 244, 66), 1000 ,460 ,90 ,"Earth");
-  Venus = new Planet(color(244, 203, 66), 700 , 560, 30, "Venus");
-  Mercury = new Planet(color(200,0, 200), 900, 540, 30, "Mercury");
-  Sun = new Planet(color(244, 200, 66), width/2,height/2,200, "Sun");
+  Neptune = new Planet(color(18, 95, 117), 800, 840 ,80, "Neptune");
+  Uranus = new Planet(color(49, 186, 224), 750, 250 ,70 , "Uranus");
+  Saturn = new Planet(color(204, 113, 34), 420, 450,50, "Saturn");
+  Jupiter = new Planet(color(119, 60, 8), 1200, 310 ,120 ,"Jupiter");
+  Mars = new Planet(color(224, 82, 31), 1150, 500 ,90 ,"Mars");
+  Earth = new Planet(color(45, 173, 31), 1000 ,460 ,90 ,"Earth");
+  Venus = new Planet(color(178, 119, 1), 700 , 560, 30, "Venus");
+  Mercury = new Planet(color(66, 60, 63), 900, 540, 30, "Mercury");
+  Sun = new Planet(color(255, 183, 30), width/2,height/2,200, "Sun");
   for(int i=0; i<b.length; i++)
   {
   b[i] = new Bg();
   }
-  
- strokeWeight(1);
- ellipse(width/2, height/2, 270, 270);
- ellipse(width/2, height/2, 300, 300);
- ellipse(width/2, height/2, 400, 400);
- ellipse(width/2, height/2, 410, 410);
- ellipse(width/2, height/2, 710, 710);
- ellipse(width/2, height/2, 760, 760);
- ellipse(width/2, height/2, 780, 780);
- ellipse(width/2, height/2, 840, 840);
 }
 
 
 void draw()
 {
-  background(0);
-  for(int i=0; i<b.length; i++)
+  if(stage == 1)
   {
-  b[i].fall();
-  b[i].show();
+    background(0);
+    for(int i=0; i<b.length; i++)
+    {
+    b[i].fall();
+    b[i].show();
+    }
+   noFill();
+   strokeWeight(1);
+   ellipse(width/2, height/2, 270, 270);
+   ellipse(width/2, height/2, 300, 300);
+   ellipse(width/2, height/2, 400, 400);
+   ellipse(width/2, height/2, 410, 410);
+   ellipse(width/2, height/2, 710, 710);
+   ellipse(width/2, height/2, 760, 760);
+   ellipse(width/2, height/2, 780, 780);
+   ellipse(width/2, height/2, 840, 840);
+   
+   Sun.display();
+   Mercury.display();
+   Venus.display();
+   Earth.display();
+   Mars.display();
+   Jupiter.display();
+   Saturn.display();
+   Uranus.display();
+   Neptune.display();
   }
- 
- Sun.display();
- Mercury.display();
- Venus.display();
- Earth.display();
- Mars.display();
- Jupiter.display();
- Saturn.display();
- Uranus.display();
- Neptune.display();
+  
+  if(stage == 2)
+  {
+    //noLoop();
+    print("Sun Page");
+    background(255);
+    
+    if (keyPressed == true)
+    {
+     stage = 1;
+    }
+  }
+  
+  if(stage == 3)
+  {
+    //noLoop();
+    print("Mercury Page");
+    background(255);
+    
+    if (keyPressed == true)
+    {
+     stage = 1;
+    }
+  }
+  
+  if(stage == 4)
+  {
+    //noLoop();
+    print("Venus Page");
+    background(255);
+    
+    if (keyPressed == true)
+    {
+     stage = 1;
+    }
+  }
+  
+  if(stage == 5)
+  {
+    //noLoop();
+    print("Earth Page");
+    background(255);
+    
+    if (keyPressed == true)
+    {
+     stage = 1;
+    }
+  }
+  
+  if(stage == 6)
+  {
+    //noLoop();
+    print("Mars Page");
+    background(255);
+    
+    if (keyPressed == true)
+    {
+     stage = 1;
+    }
+  }
+  
+  if(stage == 7)
+  {
+    //noLoop();
+    print("Jupiter Page");
+    background(255);
+    
+    if (keyPressed == true)
+    {
+     stage = 1;
+    }
+  }
+  
+  if(stage == 8)
+  {
+    //noLoop();
+    print("Saturn Page");
+    background(255);
+    
+    if (keyPressed == true)
+    {
+     stage = 1;
+    }
+  }
+  
+  if(stage == 9)
+  {
+    //noLoop();
+    print("Uranus Page");
+    background(255);
+    
+    if (keyPressed == true)
+    {
+     stage = 1;
+    }
+  }
+  if(stage == 10)
+  {
+    //noLoop();
+    print("Neptune Page");
+    background(255);
+    
+    if (keyPressed == true)
+    {
+     stage = 1;
+    }
+  }
 }
 
 void mousePressed()
@@ -124,7 +225,40 @@ class Planet
     if(d < size/2)
     {
       print(name);
-      c = color(random(0,225),random(0,225),random(0,225));
+      switch(name) 
+      {
+    
+  case "Sun": 
+    stage = 2;  // Moves to Sun page
+    break;
+  case "Mercury": 
+    stage = 3;  // Moves to Murcury page
+    break;
+    case "Venus": 
+    stage = 4;  // Venus
+    break;
+    case "Earth": 
+    stage = 5;  // Earth
+    break;
+    case "Mars": 
+    stage = 6;  // PMars
+    break;
+    case "Jupiter": 
+    stage = 7;  // Jupiter
+    break;
+    case "Saturn": 
+    stage = 8;  // Saturn
+    break;
+    case "Uranus": 
+    stage = 9;  // Uranus
+    break;
+    case "Neptune": 
+    stage = 10;  // Neptune
+    break;
+  default:        // Default executes if the case labels
+    stage = 1;   // don't match the switch parameter
+    break;
+}
     }
   }
 }
