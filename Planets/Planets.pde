@@ -24,6 +24,8 @@ int stage = 1;
 void setup()
 {
   size(1600,900);
+  sun = loadImage("Sun.jpeg");
+  
   Neptune = new Planet(color(18, 95, 117), 800, 840 ,80, "Neptune");
   Uranus = new Planet(color(49, 186, 224), 750, 250 ,70 , "Uranus");
   Saturn = new Planet(color(204, 113, 34), 420, 450,50, "Saturn");
@@ -77,6 +79,23 @@ void draw()
     //noLoop();
     print("Sun Page");
     background(255);
+    image(sun, 0, 0);
+    fill(0);
+    rect(900, 0, 700, 900);
+    noFill();
+    rect(950, 50, 600, 800);
+    textSize(40);
+    fill(0, 102, 153);
+    text("Our Sun", 1150, 100); 
+    String s ="The sun at the heart of our solar system is a yellow dwarf star, a hot ball of glowing gases. Its gravity holds the solar system together, keeping everything from the biggest planets to the smallest particles of debris in its orbit. Electric currents in the sun generate a magnetic field that is carried out through the solar system by the solar wind — a stream of electrically charged gas blowing outward from the sun in all directions.";
+    textSize(20);
+    fill(200);
+    text(s, 960, 120, 500, 300);  
+    String q ="Radius: 432,168.6 miles"; 
+    text(q, 960, 520, 500, 25);
+    String r ="Distance from Earth: 93 million miles"; 
+    text(r, 960, 545, 500, 25);  
+    
     
     if (keyPressed == true)
     {
