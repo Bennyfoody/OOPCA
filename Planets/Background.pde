@@ -1,9 +1,10 @@
 class Bg
 {
   float x =random(width);
-  float y =random(-200, -100);
-  float yspeed = random(5, 12);
-  float len = random(10, 20);
+  float y =random(-600, -100);
+  float z = random(0, 20);
+  float len = map(z, 0, 20, 10, 20);
+  float yspeed = map(z, 0, 20, 5, 15);
   
   void fall()
   {
@@ -17,7 +18,8 @@ class Bg
   
   void show()
   {
-    stroke(10);
+    float thick = map(z, 0, 20, 1, 5);
+    strokeWeight(thick);
     stroke(0,0,225);
     line(x,y,x,y+len);
   }
