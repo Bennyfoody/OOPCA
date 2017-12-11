@@ -33,19 +33,29 @@ void setup()
   mercury = loadImage("Images/Mercury.jpg");
   sun = loadImage("Images/Sun.jpeg");
   
-  Neptune = new Planet(color(66, 75, 244),width/2,height/2+380,80, "Neptune");
-  Uranus = new Planet(color(66, 170, 244),width/2,height/2+350,70, "Uranus");
-  Saturn = new Planet(color(244, 158, 66),width/2,height/2+320,50, "Saturn");
-  Jupiter = new Planet(color(244, 146, 66),width/2,height/2+270,120,"Jupiter");
-  Mars = new Planet(color(98, 244, 66),width/2,height/2+200,90,"Mars");
-  Earth = new Planet(color(98, 244, 66),width/2,height/2+200,90,"Earth");
-  Venus = new Planet(color(244, 203, 66),width/2,height/2+160,30, "Venus");
-  Mercury = new Planet(color(200,0, 200),width/2,height/2+120 ,30, "Mercury");
-  Sun = new Planet(color(244, 200, 66),width/2,height/2,200, "Sun");
+  Neptune = new Planet(color(66, 75, 244), 800, 840 ,80, "Neptune");
+  Uranus = new Planet(color(66, 170, 244), 750, 250 ,70 , "Uranus");
+  Saturn = new Planet(color(244, 158, 66), 420, 450,50, "Saturn");
+  Jupiter = new Planet(color(244, 146, 66), 1200, 310 ,120 ,"Jupiter");
+  Mars = new Planet(color(98, 244, 66), 1150, 500 ,90 ,"Mars");
+  Earth = new Planet(color(98, 244, 66), 1000 ,460 ,90 ,"Earth");
+  Venus = new Planet(color(244, 203, 66), 700 , 560, 30, "Venus");
+  Mercury = new Planet(color(200,0, 200), 900, 540, 30, "Mercury");
+  Sun = new Planet(color(244, 200, 66), width/2,height/2,200, "Sun");
   for(int i=0; i<b.length; i++)
   {
   b[i] = new Bg();
   }
+  
+ strokeWeight(1);
+ ellipse(width/2, height/2, 270, 270);
+ ellipse(width/2, height/2, 300, 300);
+ ellipse(width/2, height/2, 400, 400);
+ ellipse(width/2, height/2, 410, 410);
+ ellipse(width/2, height/2, 710, 710);
+ ellipse(width/2, height/2, 760, 760);
+ ellipse(width/2, height/2, 780, 780);
+ ellipse(width/2, height/2, 840, 840);
 }
 
 
@@ -57,15 +67,16 @@ void draw()
   b[i].fall();
   b[i].show();
   }
-  Neptune.display();
-  Uranus.display();
-  Saturn.display();
-  Jupiter.display();
-  Mars.display();
-  Earth.display();
-  Venus.display();
-  Mercury.display();
-  Sun.display();
+ 
+ Sun.display();
+ Mercury.display();
+ Venus.display();
+ Earth.display();
+ Mars.display();
+ Jupiter.display();
+ Saturn.display();
+ Uranus.display();
+ Neptune.display();
 }
 
 void mousePressed()
@@ -102,7 +113,7 @@ class Planet
 
   void display()
   {
-    stroke(0);
+    strokeWeight(2);
     fill(c);
     ellipse(xpos, ypos, size, size);
   }
