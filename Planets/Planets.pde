@@ -7,10 +7,9 @@ Planet Gliese6667ce;
 Planet Kepler62e;
 Planet Keplar62f;
 Planet Gliese581d;
- 
-float d;
- 
- 
+Bg[] b = new Bg[500];
+
+
 void setup()
 {
   size(600,900);
@@ -22,11 +21,21 @@ void setup()
   Kepler62e = new Planet(color(random(0,225),random(0,225),random(0,225)),360,360,90);
   Keplar62f = new Planet(color(random(0,225),random(0,225),random(0,225)),490,300,85);
   Gliese581d = new Planet(color(random(0,225),random(0,225),random(0,225)),80,580,80);
+  for(int i=0; i<b.length; i++)
+  {
+  b[i] = new Bg();
+  }
 }
+
 
 void draw()
 {
   background(40);
+  for(int i=0; i<b.length; i++)
+  {
+  b[i].fall();
+  b[i].show();
+  }
   Earth.display();
   Kepler186f.display();
   Kepler283c.display();
@@ -36,6 +45,7 @@ void draw()
   Keplar62f.display();
   Gliese581d.display();
 }
+
 
 //Setting up the class
 class Planet
@@ -55,26 +65,16 @@ class Planet
     ypos = tempYpos;
     size = tempSize;
   }
-void clicked() 
-{
-  d = dist(mouseX, mouseY, xpos, ypos);
-  if(d < size)
-  {
-    print("Clicked on bubble");
-  }
-}
 
-void mousePressed()
-{
-  Earth.clicked();
-}
-
-void display()
+  void display()
   {
     stroke(0);
     fill(c);
     ellipse(xpos, ypos, size, size);
-    print("Clicked on bubble");
   }
-
+  
+  void mousePressed()
+  {
+    
+  }
 }
