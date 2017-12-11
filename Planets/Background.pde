@@ -20,7 +20,7 @@ class Bg
   {
     float thick = map(z, 0, 20, 1, 5);
     strokeWeight(thick);
-    stroke(0,0,225);
+    stroke(225);
     line(x,y,x,y+len);
   }
   

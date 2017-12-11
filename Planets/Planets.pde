@@ -1,26 +1,47 @@
 //Defining Objects
 Planet Earth;
-Planet Kepler186f;
-Planet Kepler283c;
-Planet Gliese667cf;
-Planet Gliese6667ce;
-Planet Kepler62e;
-Planet Keplar62f;
-Planet Gliese581d;
+Planet Jupiter;
+Planet Venus;
+Planet Saturn;
+Planet Uranus;
+Planet Neptune;
+Planet Sun;
+Planet Mercury;
+Planet Mars;
 Bg[] b = new Bg[500];
 
+  PImage earth;
+  PImage jupiter;
+  PImage venus;
+  PImage saturn;
+  PImage uranus;
+  PImage mercury;
+  PImage neptune;
+  PImage mars;
+  PImage sun;
 
 void setup()
 {
-  size(600,900);
-  Earth = new Planet(color(random(0,225),random(0,225),random(0,225)),300,450,60,"Earth");
-  Kepler186f = new Planet(color(random(0,225),random(0,225),random(0,225)),60,240,55,"Kepler186f");
-  Kepler283c = new Planet(color(random(0,225),random(0,225),random(0,225)),410,600,100, "Kepler283c");
-  Gliese667cf = new Planet(color(random(0,225),random(0,225),random(0,225)),510,500,70, "Gliese667cf");
-  Gliese6667ce = new Planet(color(random(0,225),random(0,225),random(0,225)),100,500,70, "Gliese6667ce");
-  Kepler62e = new Planet(color(random(0,225),random(0,225),random(0,225)),360,360,90, "Kepler62e");
-  Keplar62f = new Planet(color(random(0,225),random(0,225),random(0,225)),490,300,85, "Keplar62f");
-  Gliese581d = new Planet(color(random(0,225),random(0,225),random(0,225)),80,580,80, "Gliese581d");
+  size(1600,900);
+  neptune = loadImage("Images/Neptune.jpg");
+  uranus = loadImage("Images/Uranus.jpg");
+  jupiter = loadImage("Images/Jupiter.jpg");
+  saturn = loadImage("Images/Saturn.jpg");
+  mars = loadImage("Images/Mars.jpg");
+  earth = loadImage("Images/Earth.jpg");
+  venus = loadImage("Images/Venus.jpg");
+  mercury = loadImage("Images/Mercury.jpg");
+  sun = loadImage("Images/Sun.jpeg");
+  
+  Neptune = new Planet(color(66, 75, 244),width/2,height/2+380,80, "Neptune");
+  Uranus = new Planet(color(66, 170, 244),width/2,height/2+350,70, "Uranus");
+  Saturn = new Planet(color(244, 158, 66),width/2,height/2+320,50, "Saturn");
+  Jupiter = new Planet(color(244, 146, 66),width/2,height/2+270,120,"Jupiter");
+  Mars = new Planet(color(98, 244, 66),width/2,height/2+200,90,"Mars");
+  Earth = new Planet(color(98, 244, 66),width/2,height/2+200,90,"Earth");
+  Venus = new Planet(color(244, 203, 66),width/2,height/2+160,30, "Venus");
+  Mercury = new Planet(color(200,0, 200),width/2,height/2+120 ,30, "Mercury");
+  Sun = new Planet(color(244, 200, 66),width/2,height/2,200, "Sun");
   for(int i=0; i<b.length; i++)
   {
   b[i] = new Bg();
@@ -36,26 +57,28 @@ void draw()
   b[i].fall();
   b[i].show();
   }
+  Neptune.display();
+  Uranus.display();
+  Saturn.display();
+  Jupiter.display();
+  Mars.display();
   Earth.display();
-  Kepler186f.display();
-  Kepler283c.display();
-  Gliese667cf.display();
-  Gliese6667ce.display();
-  Kepler62e.display();
-  Keplar62f.display();
-  Gliese581d.display();
+  Venus.display();
+  Mercury.display();
+  Sun.display();
 }
 
 void mousePressed()
 {
+  Neptune.clicked();
+  Uranus.clicked();
+  Saturn.clicked();
+  Jupiter.clicked();
   Earth.clicked();
-  Kepler186f.clicked();
-  Kepler283c.clicked();
-  Gliese667cf.clicked();
-  Gliese6667ce.clicked();
-  Kepler62e.clicked();
-  Keplar62f.clicked();
-  Gliese581d.clicked();
+  Mars.clicked();
+  Venus.clicked();
+  Mercury.clicked();
+  Sun.clicked();
 }
 
 //Setting up the class
@@ -89,8 +112,8 @@ class Planet
     float d = dist(mouseX, mouseY, xpos, ypos);
     if(d < size/2)
     {
-      print("Planet Clicked");
-      c = 150;
+      print(name);
+      c = color(random(0,225),random(0,225),random(0,225));
     }
   }
 }
