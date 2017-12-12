@@ -26,12 +26,31 @@ int stage = 1;
   PImage mars;
   PImage sun;
 
+int cx, cy;
+float secondsRadius;
+float minutesRadius;
+float hoursRadius;
+float clockDiameter;
+
 void setup()
 {
   size(1600,900);
+  //Clock setup
+  int radius = min(width, height) / 8;
+  secondsRadius = radius * 0.72;
+  minutesRadius = radius * 0.60;
+  hoursRadius = radius * 0.50;
+  clockDiameter = radius * 1.8;
+  
+  cx = width / 8;
+  cy = height / 8 + 50;
+  
+  //Audio setup
   file = new SoundFile(this, "Audio/audio2.mp3");
   file.play();
   file.amp(0.025);
+  
+  //Loading images
   sun = loadImage("Sun.jpeg");
   mercury = loadImage("Mercury.jpg");
   venus = loadImage("Venus.jpg");
@@ -42,6 +61,7 @@ void setup()
   uranus = loadImage("Uranus.jpg");
   neptune = loadImage("Neptune.jpg");
   
+  //Creating the planets
   Neptune = new Planet(color(18, 95, 117), 800, 840 ,80, "Neptune");
   Uranus = new Planet(color(49, 186, 224), 750, 250 ,70 , "Uranus");
   Saturn = new Planet(color(204, 113, 34), 420, 450,50, "Saturn");
@@ -62,12 +82,44 @@ void draw()
 {
   if(stage == 1)
   {
+    //Creating background stars
     background(0);
     for(int i=0; i<b.length; i++)
     {
     b[i].fall();
     b[i].show();
     }
+   
+  //Drawing clock
+  fill(237, 111, 2);
+  noStroke();
+  ellipse(cx, cy, clockDiameter, clockDiameter);
+  float s = map(second(), 0, 60, 0, TWO_PI) - HALF_PI;
+  float m = map(minute() + norm(second(), 0, 60), 0, 60, 0, TWO_PI) - HALF_PI; 
+  float h = map(hour() + norm(minute(), 0, 60), 0, 24, 0, TWO_PI * 2) - HALF_PI;
+  
+  // Drawing the hands of the clock
+  stroke(28, 221, 202);
+  strokeWeight(1);
+  line(cx, cy, cx + cos(s) * secondsRadius, cy + sin(s) * secondsRadius);
+  strokeWeight(2);
+  line(cx, cy, cx + cos(m) * minutesRadius, cy + sin(m) * minutesRadius);
+  strokeWeight(4);
+  line(cx, cy, cx + cos(h) * hoursRadius, cy + sin(h) * hoursRadius);
+  
+  // Draw the minute hand
+  strokeWeight(2);
+  beginShape(POINTS);
+  for (int a = 0; a < 360; a+=6) 
+  {
+    float angle = radians(a);
+    float x = cx + cos(angle) * secondsRadius;
+    float y = cy + sin(angle) * secondsRadius;
+    vertex(x, y);
+  }
+  endShape();
+  
+  //Drawing the concentric circles
    noFill();
    strokeWeight(1);
    ellipse(width/2, height/2, 270, 270);
@@ -79,6 +131,8 @@ void draw()
    ellipse(width/2, height/2, 780, 780);
    ellipse(width/2, height/2, 840, 840);
    
+   //Displaying the planets
+   noStroke();
    Sun.display();
    Mercury.display();
    Venus.display();
