@@ -26,25 +26,9 @@ int stage = 1;
   PImage mars;
   PImage sun;
 
-int cx, cy;
-float secondsRadius;
-float minutesRadius;
-float hoursRadius;
-float clockDiameter;
-
 void setup()
 {
   size(1600,900);
-  //Clock setup
-  int radius = min(width, height) / 8;
-  secondsRadius = radius * 0.72;
-  minutesRadius = radius * 0.60;
-  hoursRadius = radius * 0.50;
-  clockDiameter = radius * 1.8;
-  
-  cx = width / 8;
-  cy = height / 8 + 50;
-  
   //Audio setup
   file = new SoundFile(this, "Audio/audio2.mp3");
   file.play();
@@ -90,35 +74,6 @@ void draw()
     b[i].show();
     }
    
-  //Drawing clock
-  fill(237, 111, 2);
-  noStroke();
-  ellipse(cx, cy, clockDiameter, clockDiameter);
-  float s = map(second(), 0, 60, 0, TWO_PI) - HALF_PI;
-  float m = map(minute() + norm(second(), 0, 60), 0, 60, 0, TWO_PI) - HALF_PI; 
-  float h = map(hour() + norm(minute(), 0, 60), 0, 24, 0, TWO_PI * 2) - HALF_PI;
-  
-  // Drawing the hands of the clock
-  stroke(28, 221, 202);
-  strokeWeight(1);
-  line(cx, cy, cx + cos(s) * secondsRadius, cy + sin(s) * secondsRadius);
-  strokeWeight(2);
-  line(cx, cy, cx + cos(m) * minutesRadius, cy + sin(m) * minutesRadius);
-  strokeWeight(4);
-  line(cx, cy, cx + cos(h) * hoursRadius, cy + sin(h) * hoursRadius);
-  
-  // Draw the minute hand
-  strokeWeight(2);
-  beginShape(POINTS);
-  for (int a = 0; a < 360; a+=6) 
-  {
-    float angle = radians(a);
-    float x = cx + cos(angle) * secondsRadius;
-    float y = cy + sin(angle) * secondsRadius;
-    vertex(x, y);
-  }
-  endShape();
-  
   //Drawing the concentric circles
    noFill();
    strokeWeight(1);
