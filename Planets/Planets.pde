@@ -1,3 +1,7 @@
+//Importing Librarys
+import processing.sound.*;
+SoundFile file;
+
 //Defining Objects
 Planet Earth;
 Planet Jupiter;
@@ -9,6 +13,7 @@ Planet Sun;
 Planet Mercury;
 Planet Mars;
 Bg[] b = new Bg[250];
+
 int stage = 1;
 
   PImage earth;
@@ -24,6 +29,9 @@ int stage = 1;
 void setup()
 {
   size(1600,900);
+  file = new SoundFile(this, "Audio/audio2.mp3");
+  file.play();
+  file.amp(0.025);
   sun = loadImage("Sun.jpeg");
   mercury = loadImage("Mercury.jpg");
   venus = loadImage("Venus.jpg");
