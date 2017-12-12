@@ -25,6 +25,14 @@ void setup()
 {
   size(1600,900);
   sun = loadImage("Sun.jpeg");
+  mercury = loadImage("Mercury.jpg");
+  venus = loadImage("Venus.jpg");
+  earth = loadImage("Earth.jpg");
+  mars = loadImage("Mars.jpg");
+  jupiter = loadImage("Jupiter.jpg");
+  saturn = loadImage("Saturn.jpg");
+  uranus = loadImage("Uranus.jpg");
+  neptune = loadImage("Neptune.jpg");
   
   Neptune = new Planet(color(18, 95, 117), 800, 840 ,80, "Neptune");
   Uranus = new Planet(color(49, 186, 224), 750, 250 ,70 , "Uranus");
@@ -95,6 +103,12 @@ void draw()
     text(q, 960, 520, 500, 25);
     String r ="Distance from Earth: 93 million miles"; 
     text(r, 960, 545, 500, 25);  
+    String e ="Structure: 91.0% Hydrogen, 8.9% Helium"; 
+    text(e, 960, 570, 500, 25);  
+    String t ="Moons: None, instead it has planets"; 
+    text(t, 960, 595, 500, 25);
+    String y ="Rings: None"; 
+    text(y, 960, 620, 500, 25); 
     
     
     if (keyPressed == true)
@@ -106,9 +120,30 @@ void draw()
   if(stage == 3)
   {
     //noLoop();
-    print("Mercury Page");
+    print("Mercury");
     background(255);
-    
+    image(mercury, 0, 0);
+    fill(0);
+    rect(900, 0, 700, 900);
+    noFill();
+    rect(950, 50, 600, 800);
+    textSize(40);
+    fill(0, 102, 153);
+    text("Mercury: The Swiftest Planet", 1150, 100); 
+    String s ="Mercury's eccentric orbit takes the small planet as close as 47 million km (29 million miles) and as far as 70 million km (43 million miles) from the sun. If one could stand on the scorching surface of Mercury when it is at its closest point to the sun, the sun would appear more than three times as large as it does when viewed from Earth.";
+    textSize(20);
+    fill(200);
+    text(s, 960, 120, 500, 300);  
+    String q ="Radius: 1,550 miles"; 
+    text(q, 960, 520, 500, 25);
+    String r ="Distance from Earth: 48 million miles"; 
+    text(r, 960, 545, 500, 25);  
+    String e ="Structure: 75.0% Iron-Nickle, 25% Unknown"; 
+    text(e, 960, 570, 500, 25);  
+    String t ="Moons: None"; 
+    text(t, 960, 595, 500, 25);
+    String y ="Rings: None"; 
+    text(y, 960, 620, 500, 25); 
     if (keyPressed == true)
     {
      stage = 1;
@@ -120,6 +155,28 @@ void draw()
     //noLoop();
     print("Venus Page");
     background(255);
+    image(venus, 0, 0);
+    fill(0);
+    rect(900, 0, 700, 900);
+    noFill();
+    rect(950, 50, 600, 800);
+    textSize(40);
+    fill(0, 102, 153);
+    text("Venus: Planetary Hot Spot", 1150, 100); 
+    String s = "Venus is the second planet from the sun and our closest planetary neighbor. Similar in structure and size to Earth, Venus spins slowly in the opposite direction most planets do. Its thick atmosphere traps heat in a runaway greenhouse effect, making it the hottest planet in our solar system with surface temperatures hot enough to melt lead. Glimpses below the clouds reveal volcanoes and deformed mountains.";  
+    textSize(20);
+    fill(200);
+    text(s, 960, 120, 500, 300);  
+    String q ="Radius: 3,760 miles"; 
+    text(q, 960, 520, 500, 25);
+    String r ="Distance from Earth: 25 million miles"; 
+    text(r, 960, 545, 500, 25);  
+    String e ="Structure: Iron-Core, rock crust"; 
+    text(e, 960, 570, 500, 25);  
+    String t ="Moons: None"; 
+    text(t, 960, 595, 500, 25);
+    String y ="Rings: None"; 
+    text(y, 960, 620, 500, 25); 
     
     if (keyPressed == true)
     {
@@ -130,8 +187,30 @@ void draw()
   if(stage == 5)
   {
     //noLoop();
-    print("Earth Page");
+    print("Earth");
     background(255);
+    image(earth, 0, 0);
+    fill(0);
+    rect(900, 0, 700, 900);
+    noFill();
+    rect(950, 50, 600, 800);
+    textSize(40);
+    fill(0, 102, 153);
+    text("Earth: Home Planet", 1150, 100); 
+    String s ="Earth is the third planet from the sun and the fifth largest in the solar system. Just slightly larger than nearby Venus, Earth is the biggest of the terrestrial planets. Our home planet is the only planet in our solar system known to harbor living things.";
+    textSize(20);
+    fill(200);
+    text(s, 960, 120, 500, 300);  
+    String q ="Radius: 3,959 miles miles"; 
+    text(q, 960, 520, 500, 25);
+    String r ="Distance from Sun: 93 million miles"; 
+    text(r, 960, 545, 500, 25);  
+    String e ="Structure: Iron-Nickle, molten rock, 70% Ocean Coverage"; 
+    text(e, 960, 570, 500, 25);  
+    String t ="Moons: One"; 
+    text(t, 960, 595, 500, 25);
+    String y ="Rings: None"; 
+    text(y, 960, 620, 500, 25); 
     
     if (keyPressed == true)
     {
@@ -144,6 +223,28 @@ void draw()
     //noLoop();
     print("Mars Page");
     background(255);
+    image(mars, 0, 0);
+    fill(0);
+    rect(900, 0, 700, 900);
+    noFill();
+    rect(950, 50, 600, 800);
+    textSize(40);
+    fill(0, 102, 153);
+    text("Mars: The Red Planet", 1150, 100); 
+    String s ="The sun at the heart of our solar system is a yellow dwarf star, a hot ball of glowing gases. Its gravity holds the solar system together, keeping everything from the biggest planets to the smallest particles of debris in its orbit. Electric currents in the sun generate a magnetic field that is carried out through the solar system by the solar wind — a stream of electrically charged gas blowing outward from the sun in all directions.";
+    textSize(20);
+    fill(200);
+    text(s, 960, 120, 500, 300);  
+    String q ="Radius: 432,168.6 miles"; 
+    text(q, 960, 520, 500, 25);
+    String r ="Distance from Earth: 93 million miles"; 
+    text(r, 960, 545, 500, 25);  
+    String e ="Structure: 91.0% Hydrogen, 8.9% Helium"; 
+    text(e, 960, 570, 500, 25);  
+    String t ="Moons: None, instead it has planets"; 
+    text(t, 960, 595, 500, 25);
+    String y ="Rings: None"; 
+    text(y, 960, 620, 500, 25); 
     
     if (keyPressed == true)
     {
@@ -156,6 +257,28 @@ void draw()
     //noLoop();
     print("Jupiter Page");
     background(255);
+    image(jupiter, 0, 0);
+    fill(0);
+    rect(900, 0, 700, 900);
+    noFill();
+    rect(950, 50, 600, 800);
+    textSize(40);
+    fill(0, 102, 153);
+    text("Our Sun", 1150, 100); 
+    String s ="The sun at the heart of our solar system is a yellow dwarf star, a hot ball of glowing gases. Its gravity holds the solar system together, keeping everything from the biggest planets to the smallest particles of debris in its orbit. Electric currents in the sun generate a magnetic field that is carried out through the solar system by the solar wind — a stream of electrically charged gas blowing outward from the sun in all directions.";
+    textSize(20);
+    fill(200);
+    text(s, 960, 120, 500, 300);  
+    String q ="Radius: 432,168.6 miles"; 
+    text(q, 960, 520, 500, 25);
+    String r ="Distance from Earth: 93 million miles"; 
+    text(r, 960, 545, 500, 25);  
+    String e ="Structure: 91.0% Hydrogen, 8.9% Helium"; 
+    text(e, 960, 570, 500, 25);  
+    String t ="Moons: None, instead it has planets"; 
+    text(t, 960, 595, 500, 25);
+    String y ="Rings: None"; 
+    text(y, 960, 620, 500, 25); 
     
     if (keyPressed == true)
     {
@@ -168,6 +291,28 @@ void draw()
     //noLoop();
     print("Saturn Page");
     background(255);
+    image(saturn, 0, 0);
+    fill(0);
+    rect(900, 0, 700, 900);
+    noFill();
+    rect(950, 50, 600, 800);
+    textSize(40);
+    fill(0, 102, 153);
+    text("Our Sun", 1150, 100); 
+    String s ="The sun at the heart of our solar system is a yellow dwarf star, a hot ball of glowing gases. Its gravity holds the solar system together, keeping everything from the biggest planets to the smallest particles of debris in its orbit. Electric currents in the sun generate a magnetic field that is carried out through the solar system by the solar wind — a stream of electrically charged gas blowing outward from the sun in all directions.";
+    textSize(20);
+    fill(200);
+    text(s, 960, 120, 500, 300);  
+    String q ="Radius: 432,168.6 miles"; 
+    text(q, 960, 520, 500, 25);
+    String r ="Distance from Earth: 93 million miles"; 
+    text(r, 960, 545, 500, 25);  
+    String e ="Structure: 91.0% Hydrogen, 8.9% Helium"; 
+    text(e, 960, 570, 500, 25);  
+    String t ="Moons: None, instead it has planets"; 
+    text(t, 960, 595, 500, 25);
+    String y ="Rings: None"; 
+    text(y, 960, 620, 500, 25); 
     
     if (keyPressed == true)
     {
@@ -180,7 +325,28 @@ void draw()
     //noLoop();
     print("Uranus Page");
     background(255);
-    
+    image(uranus, 0, 0);
+    fill(0);
+    rect(900, 0, 700, 900);
+    noFill();
+    rect(950, 50, 600, 800);
+    textSize(40);
+    fill(0, 102, 153);
+    text("Uranus: The Sideways Planet", 1150, 100); 
+    String s ="The seventh planet from the sun with the third largest diameter in our solar system, Uranus is very cold and windy. The ice giant is surrounded by 13 faint rings and 27 small moons as it rotates at a nearly 90-degree angle from the plane of its orbit. This unique tilt makes Uranus appear to spin on its side, orbiting the sun like a rolling ball.";
+    textSize(20);
+    fill(200);
+    text(s, 960, 120, 500, 300);  
+    String q ="Radius: 15,759 miles"; 
+    text(q, 960, 520, 500, 25);
+    String r ="Distance from Earth: 93 million miles"; 
+    text(r, 960, 545, 500, 25);  
+    String e ="Structure: 80.0% Water, Methane, Ammonia, 20.0% Rocky Core "; 
+    text(e, 960, 570, 500, 25);  
+    String t ="Moons: 13"; 
+    text(t, 960, 595, 500, 25);
+    String y ="Rings: 27"; 
+    text(y, 960, 620, 500, 25); 
     if (keyPressed == true)
     {
      stage = 1;
@@ -191,6 +357,28 @@ void draw()
     //noLoop();
     print("Neptune Page");
     background(255);
+    image(neptune, 0, 0);
+    fill(0);
+    rect(900, 0, 700, 900);
+    noFill();
+    rect(950, 50, 600, 800);
+    textSize(40);
+    fill(0, 102, 153);
+    text("Our Sun", 1150, 100); 
+    String s ="The sun at the heart of our solar system is a yellow dwarf star, a hot ball of glowing gases. Its gravity holds the solar system together, keeping everything from the biggest planets to the smallest particles of debris in its orbit. Electric currents in the sun generate a magnetic field that is carried out through the solar system by the solar wind — a stream of electrically charged gas blowing outward from the sun in all directions.";
+    textSize(20);
+    fill(200);
+    text(s, 960, 120, 500, 300);  
+    String q ="Radius: 432,168.6 miles"; 
+    text(q, 960, 520, 500, 25);
+    String r ="Distance from Earth: 93 million miles"; 
+    text(r, 960, 545, 500, 25);  
+    String e ="Structure: 91.0% Hydrogen, 8.9% Helium"; 
+    text(e, 960, 570, 500, 25);  
+    String t ="Moons: None, instead it has planets"; 
+    text(t, 960, 595, 500, 25);
+    String y ="Rings: None"; 
+    text(y, 960, 620, 500, 25); 
     
     if (keyPressed == true)
     {
@@ -243,9 +431,9 @@ class Planet
     float d = dist(mouseX, mouseY, xpos, ypos);
     if(d < size/2)
     {
-      print(name);
-      switch(name) 
-      {
+  print(name);
+  switch(name) 
+  {
     
   case "Sun": 
     stage = 2;  // Moves to Sun page
@@ -260,7 +448,7 @@ class Planet
     stage = 5;  // Earth
     break;
     case "Mars": 
-    stage = 6;  // PMars
+    stage = 6;  // Mars
     break;
     case "Jupiter": 
     stage = 7;  // Jupiter
